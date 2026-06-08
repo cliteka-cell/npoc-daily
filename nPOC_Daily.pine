@@ -23,7 +23,7 @@ indicator("Naked POC (nPOC) — Daily", shorttitle="nPOC", overlay=true,
 //   volume becomes the POC. If price never returns to that level, it
 //   remains on the chart as a dashed line until filled.
 //
-// RECOMMENDED TIMEFRAME: 1H – 4H
+// RECOMMENDED TIMEFRAME: 5m to 4H (any intraday)
 // ═══════════════════════════════════════════════════════════════════════════
 
 // ── Inputs ───────────────────────────────────────────────────────────────────
@@ -42,11 +42,11 @@ show_label    = input.bool(true,  "Show 'nPOC' Labels",                         
 hour_ms = 1000 * 60 * 60
 
 // ── Timeframe guard ───────────────────────────────────────────────────────────
-is_valid = timeframe.isminutes and timeframe.multiplier >= 60 and timeframe.multiplier < 1440
+is_valid = timeframe.isintraday
 
 if barstate.islast and not is_valid
     label.new(bar_index, high,
-              "⚠️  nPOC works on 1H – 12H timeframes only.",
+              "⚠️  nPOC requires an intraday timeframe (seconds - hours).",
               xloc=xloc.bar_index, color=color.red, textcolor=color.white,
               style=label.style_label_left, size=size.normal)
 
