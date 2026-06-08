@@ -1,10 +1,10 @@
-# Naked POC (nPOC) — Daily
+# Naked POC (nPOC) - Daily
 
 A TradingView Pine Script v6 indicator that tracks unvisited daily Points of Control and displays them as clean dashed levels on the chart. No histogram. No boxes. Just the levels that still have magnetic pull on price.
 
 ## What is a Naked POC?
 
-The Point of Control (POC) is the price where the most volume traded during a session. Once a session closes, that level becomes a reference — price tends to return to it. A POC is "naked" when price has not revisited it since the session closed. Once price touches the level, it is automatically removed from the chart.
+The Point of Control (POC) is the price where the most volume traded during a session. Once a session closes, that level becomes a reference - price tends to return to it. A POC is "naked" when price has not revisited it since the session closed. Once price touches the level, it is automatically removed from the chart.
 
 ## What makes this different from TradingView's built-in SVP?
 
@@ -12,7 +12,7 @@ TradingView's Session Volume Profile draws a full histogram for every visible se
 
 ## Volume Distribution
 
-Most volume profile tools distribute each bar's volume uniformly across its high-low range. This indicator uses a **close-weighted triangular distribution** — bins near the bar's close receive more weight than bins at the extremes. The POC lands closer to where price repeatedly settled, not just where it briefly spiked.
+Most volume profile tools distribute each bar's volume uniformly across its high-low range. This indicator uses a **close-weighted triangular distribution** - bins near the bar's close receive more weight than bins at the extremes. The POC lands closer to where price repeatedly settled, not just where it briefly spiked.
 
 ## Settings
 
@@ -29,11 +29,14 @@ Most volume profile tools distribute each bar's volume uniformly across its high
 
 **1H to 4H.** A warning label appears if the indicator is applied to an incompatible timeframe.
 
-## Installation
+## How to use
 
-1. Open TradingView and go to Pine Script Editor
-2. Paste the contents of `nPOC_Daily.pine`
-3. Click Add to chart
+Add the published indicator directly from TradingView, no copy-paste needed:
+
+1. Open it here: [Naked POC (nPOC): Clean and No Clutter](https://www.tradingview.com/script/3r5whRmf-Naked-POC-nPOC-Clean-and-No-Clutter/)
+2. Click the star to add it to your favorites, then add it to any chart from your indicators list.
+
+The full source (`nPOC_Daily.pine`) lives in this repo under the MPL 2.0 license if you want to read or fork it.
 
 ## License
 
